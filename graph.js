@@ -1,7 +1,7 @@
 // Load the JSON data, parse it, and render / populate the d3 graph
 
 
-d3.json("http://tophj.github.io/pings.json", function(data){
+d3.json("pings.json", function(data){
 	renderGraph(data);
 });
 
