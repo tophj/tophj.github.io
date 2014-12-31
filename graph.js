@@ -33,7 +33,7 @@ var h = 350;
 var padding = 40;
 
 
-console.log(data.count);
+console.log(data.length);
 /*
 //Static dataset
 var dataset = [
