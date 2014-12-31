@@ -23,8 +23,8 @@
 //     .text(function(d) { return d; });
 
 
-//d3.json("http://tophj.github.io/pings.json", function(data){
-d3.json("pings.json", function(data){
+d3.json("http://tophj.github.io/pings.json", function(data){
+
 
 
 //Width and height
