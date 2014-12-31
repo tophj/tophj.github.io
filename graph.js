@@ -23,13 +23,17 @@
 //     .text(function(d) { return d; });
 
 
+//d3.json("http://tophj.github.io/pings.json", function(data){
 d3.json("pings.json", function(data){
 
-//Width and height
-var w = 500;
-var h = 300;
-var padding = 50;
 
+//Width and height
+var w = 700;
+var h = 350;
+var padding = 40;
+
+
+console.log(data.count);
 /*
 //Static dataset
 var dataset = [
@@ -42,21 +46,21 @@ var dataset = [
 //Dynamic, random dataset
 var dataset = [];					//Initialize empty array
 var numDataPoints = 50;				//Number of dummy data points to create
-var xRange = Math.random() * 1000;	//Max range of new x values
-var yRange = Math.random() * 2000;	//Max range of new y values
+var xRange = 30;	//Max range of new x values
+var yRange = 3000;	//Max range of new y values
 
 //var numDataPoints = Object.keys(dataset).length
 //console.log(Object.keys(data).length);
 
-for (var i = 0; i < numDataPoints; i++) {					//Loop numDataPoints times
-	var newNumber1 = Math.round(Math.random() * xRange);	//New random integer
-	var newNumber2 = Math.round(Math.random() * yRange);	//New random integer
-	dataset.push([newNumber1, newNumber2]);					//Add new number to array
-}
+// for (var i = 0; i < numDataPoints; i++) {					//Loop numDataPoints times
+// 	var newNumber1 = Math.round(Math.random() * xRange);	//New random integer
+// 	var newNumber2 = Math.round(Math.random() * yRange);	//New random integer
+// 	dataset.push([newNumber1, newNumber2]);					//Add new number to array
+// }
 
 //Create scale functions
 var xScale = d3.scale.linear()
-					 .domain([0, 150])
+					 .domain([0, 30])
 					 .range([padding, w - padding * 2]);
 
 var yScale = d3.scale.linear()
