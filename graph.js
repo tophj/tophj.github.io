@@ -1,16 +1,27 @@
 // Load the JSON data, parse it, and render / populate the d3 graph
 
+var pingsJson = []
+$.getJSON('http://tophj.github.io/pings.json', function(data) {
+   if(data){
+   		pingsJson = data;
+   	}
+});
 
-d3.json("pings.json", function(data){
-	renderGraph(data);
+$.ajax({
+  url: "http://tophj.github.io/pings.json.js",
+  dataType: "jsonp",
+  jsonpCallback: "STRd6/md:v0.3.2"
+  success: function(data) { 
+  	if(data){
+   		pingsJson = data;
+   	}
+   }
 });
 
 
-
-
 function renderGraph(jsonData){
-	if(jsonData.length){
-		alert(jsonData.length);
+	if(jsonData){
+		alert(jsonData);
 	}
 	//Width and height
 	var w = 700;
