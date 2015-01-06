@@ -5,7 +5,7 @@ var pingsJson = []
 $.ajax({
   url: "http://tophj.github.io/pings.json.js",
   dataType: "jsonp",
-  jsonpCallback: "tophjPings",
+  jsonpCallback: "callback",
   success: function(dataWeGotViaJsonp){
   	if(dataWeGotViaJsonp){
   		pingsJson = dataWeGotViaJsonp;
