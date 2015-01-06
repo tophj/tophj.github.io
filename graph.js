@@ -1,22 +1,42 @@
 // Load the JSON data, parse it, and render / populate the d3 graph
 
 var pingsJson = []
-$.getJSON('http://tophj.github.io/pings.json', function(data) {
-   if(data){
-   		pingsJson = data;
-   	}
+
+// $.ajax({
+//   url: "http://tophj.github.io/pings.json.js",
+//   dataType: "jsonp",
+//   jsonpCallback: "tophjPings",
+//   success: function(dataWeGotViaJsonp){
+//   	if(dataWeGotViaJsonp){
+//   		pingsJson = dataWeGotViaJsonp;
+//   	}
+//   },
+//   error: function() { console.log('Failed to load JSON data'); }
+// });
+
+$.getJSON("pings.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
 });
 
-$.ajax({
-  url: "http://tophj.github.io/pings.json.js",
-  dataType: "jsonp",
-  jsonpCallback: "STRd6/md:v0.3.2"
-  success: function(data) { 
-  	if(data){
-   		pingsJson = data;
-   	}
-   }
-});
+
+// function JSONP( url, callback ) {
+// 	var id = ( 'jsonp' + Math.random() * new Date() ).replace('.', '');
+// 	var script = document.createElement('script');
+// 	script.src = url.replace( 'callback=?', 'callback=' + id );
+// 	document.body.appendChild( script );
+// 	window[ id ] = function( data ) {
+// 		if (callback) {
+// 			callback( data );
+// 		}
+// 	};
+// }
+
+// JSONP( 'http://tophj.github.io/pings.json.js', function( response ) {
+// 	var data = response.data;
+// 	console.log(data.time);
+// 	});
+
+
 
 
 function renderGraph(jsonData){
