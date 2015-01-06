@@ -18,7 +18,6 @@ $.ajax({
 //     console.log(json); // this will show the info it in firebug console
 // });
 
-
 // function JSONP( url, callback ) {
 // 	var id = ( 'jsonp' + Math.random() * new Date() ).replace('.', '');
 // 	var script = document.createElement('script');
