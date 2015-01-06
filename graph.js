@@ -1,7 +1,7 @@
 // Load the JSON data, parse it, and render / populate the d3 graph
 
 var pingsJson = []
-console.log(pings);
+console.log(site.data.pings);
 // $.ajax({
 //   url: "pings.json",
 //   dataType: "json",
