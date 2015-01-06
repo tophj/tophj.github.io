@@ -2,21 +2,21 @@
 
 var pingsJson = []
 
-// $.ajax({
-//   url: "http://tophj.github.io/pings.json.js",
-//   dataType: "jsonp",
-//   jsonpCallback: "tophjPings",
-//   success: function(dataWeGotViaJsonp){
-//   	if(dataWeGotViaJsonp){
-//   		pingsJson = dataWeGotViaJsonp;
-//   	}
-//   },
-//   error: function() { console.log('Failed to load JSON data'); }
-// });
-
-$.getJSON("pings.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
+$.ajax({
+  url: "pings.json",
+  dataType: "json",
+  jsonpCallback: "tophjPings",
+  success: function(dataWeGotViaJsonp){
+  	if(dataWeGotViaJsonp){
+  		pingsJson = dataWeGotViaJsonp;
+  	}
+  },
+  error: function() { console.log('Failed to load JSON data'); }
 });
+
+// $.getJSON("pings.json", function(json) {
+//     console.log(json); // this will show the info it in firebug console
+// });
 
 
 // function JSONP( url, callback ) {
