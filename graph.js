@@ -1,47 +1,8 @@
 // Load the JSON data, parse it, and render / populate the d3 graph
 
-var pingsJson = []
 
-$.ajax({
-  url: "http://tophj.github.io/pings.json.js",
-  dataType: "jsonp",
-  jsonpCallback: "callback",
-  success: function(dataWeGotViaJsonp){
-  	if(dataWeGotViaJsonp){
-  		pingsJson = dataWeGotViaJsonp;
-  	}
-  },
-  error: function() { console.log('Failed to load JSON data'); }
-});
-
-// $.getJSON("pings.json", function(json) {
-//     console.log(json); // this will show the info it in firebug console
-// });
-
-// function JSONP( url, callback ) {
-// 	var id = ( 'jsonp' + Math.random() * new Date() ).replace('.', '');
-// 	var script = document.createElement('script');
-// 	script.src = url.replace( 'callback=?', 'callback=' + id );
-// 	document.body.appendChild( script );
-// 	window[ id ] = function( data ) {
-// 		if (callback) {
-// 			callback( data );
-// 		}
-// 	};
-// }
-
-// JSONP( 'http://tophj.github.io/pings.json.js', function( response ) {
-// 	var data = response.data;
-// 	console.log(data.time);
-// 	});
-
-
-
-
-function renderGraph(jsonData){
-	if(jsonData){
-		alert(jsonData);
-	}
+function renderGraph(){
+	
 	//Width and height
 	var w = 700;
 	var h = 350;
@@ -59,10 +20,16 @@ function renderGraph(jsonData){
 	// 	dataset.push([newNumber1, newNumber2]);					//Add new number to array
 	// }
 
+	//Create averages for days
+	for (var i = 0; i < jsonPings.pings.length; i++){
+		//get the date and convert it to a 
+		var x = jsonPings.pings[i].date;
+
+	}
+
 	//Create scale functions
-	var xScale = d3.scale.linear()
-						 .domain([0, 30])
-						 .range([padding, w - padding * 2]);
+	var xScale = d3.time.scale()
+						 
 
 	var yScale = d3.scale.linear()
 						 .domain([0, 3000])
@@ -141,3 +108,6 @@ function renderGraph(jsonData){
 		.attr("transform", "translate(" + padding + ",0)")
 		.call(yAxis);
 }
+
+
+renderGraph();

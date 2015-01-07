@@ -12,8 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-
     <!-- Custom styles for this template -->
     <link href="tophj-home.css" rel="stylesheet">
 
@@ -22,11 +20,8 @@
   <body>
 
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
-
           <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand">tophj</h3>
@@ -41,45 +36,37 @@
               </nav>
             </div>
           </div>
-
           <div class="inner cover">
             <h1 class="cover-heading">Ping.</h1>
-
             <div class="chart">
             </div>
-
             <p class="lead">Ping d3.js graph here.</p>
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Path to ping project</a>
             </p>
           </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Made with: 
-              	<a href="http://getbootstrap.com">Bootstrap</a>.
-              </p>
-            </div>
-          </div>
-
         </div>
-
       </div>
-
     </div>
 
     <!-- D3 for graphs -->
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="graph.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+    <!-- Core files for rendering the graph
+    ================================================== -->
+    <script src="pingJSON.js"></script>
+    <script src="graph.js"></script>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster --> 
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+    <!-- <script src="http://getbootstrap.com/assets/js/docs.min.js"></script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+
 </html>
