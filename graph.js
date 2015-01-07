@@ -4,27 +4,19 @@
 function renderDayGraph(){
 	
 	//Width and height
-	var w = 800;
-	var h = 450;
+	var width = 800;
+	var height = 450;
 	var padding = 40;
-
-
 	var parseDate = d3.time.format("%H:%M").parse;
 
 	//Create scale functions
 	var xScale = d3.time.scale()
-						 .range([padding, w - padding * 2]);
+						 .range([padding, width - padding * 2]);
 		
 
 	var yScale = d3.scale.linear()
-						 //.domain([0, 3000])
-						 .range([h - padding, padding]);
+						 .range([height - padding, padding]);
 				
-	// radius
-	//var rScale = d3.scale.linear()
-						 //.domain([0, 3000])
-	//					 .range([2, 5]);
-
 	//Define X axis
 	var xAxis = d3.svg.axis()
 					  .scale(xScale)
@@ -40,8 +32,8 @@ function renderDayGraph(){
 	//Create SVG element
 	var svg = d3.select(".chart")
 				.append("svg")
-				.attr("width", w)
-				.attr("height", h);
+				.attr("width", width)
+				.attr("height", height);
 	
 
 	(jsonPings.pings).forEach(function(d){
@@ -103,7 +95,7 @@ function renderDayGraph(){
 	//Create X axis
 	svg.append("g")
 		.attr("class", "axis")
-		.attr("transform", "translate(0," + (h - padding) + ")")
+		.attr("transform", "translate(0," + (height - padding) + ")")
 		.call(xAxis);
 
 	//Create Y axis

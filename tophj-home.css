@@ -9,161 +9,109 @@ a:hover {
   color: #fff;
 }
 
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-
 /*
- * Base structure
+ * Base
  */
+html, body{
+	height: 100%;
+	background-color: #333;
+	text-align: center;
+	color: white;
 
-html,
-body {
-  height: 99%;
-  background-color: #333;
-  font: 10px sans-serif;
 }
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
-.axis path,
-.axis line {
-  fill: none;
-  stroke: white;
-  shape-rendering: crispEdges;
+.site-wrapper{
+	display:table;
+	margin-right: auto;
+  	margin-left: auto;
+
 }
 
-.axis text {
-  font-family: sans-serif;
-  font-size: 11px;
-  fill: white;
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
-
-.chart div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
-}
 /*
  * Header
  */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
+header{
+	margin-top: 20px;
+  	vertical-align: top;
+  	height: 50px;
+}
+.masthead{
+	margin-top: 0px;
+  	float: left;
+
+}
+.masthead-list{
+	vertical-align: top;
 }
 
-.masthead-nav > li {
-  display: inline-block;
+.masthead-list > li{
+	display: inline-block;
+	margin-left: 20px;
 }
-.masthead-nav > li + li {
-  margin-left: 20px;
+.masthead-list >li > a{
+	font: 16px sans-serif;
 }
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
+.masthead-list > li > a {
   font-size: 16px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
+.masthead-list > li > a:hover,
+.masthead-list > li > a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
   border-bottom-color: rgba(255,255,255,.25);
 }
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
+.masthead-list > .default > a,
+.masthead-list > .default > a:hover,
+.masthead-list > .default > a:focus {
   color: #fff;
   border-bottom-color: #fff;
 }
 
-@media (min-width: 768px) {
-  .masthead-brand {
+/*
+ * Graph & Description
+ */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: sans-serif;
+  fill: white;
+}
+
+.graph-body{
+	margin-top: 30px;
+  	margin-bottom: 100px;
+  	position:relative;
+
+
+}
+.graph-body h3{
+	font-size: 16px;
+}
+.graph-description{
+	margin-top: 20px;
+}
+.graph-description p{
+  font-size: 14px;
+}
+
+
+@media (min-width: 800px) {
+  .masthead {
     float: left;
   }
-  .masthead-nav {
+  .masthead-list {
     float: right;
   }
 }
 
 
-/*
- * Cover
- */
 
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 5px 5px;
-  font-weight: bold;
-}
-.graph-description p{
-  padding-top: 15px;
-  font: 12px sans-serif;
-}
 
-/*
- * Affix and center
- */
 
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    top: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .cover-container {
-    width: 700px;
-  }
-}
