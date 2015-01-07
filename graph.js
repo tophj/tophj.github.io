@@ -1,26 +1,29 @@
 // Load the JSON data, parse it, and render / populate the d3 graph
 
-
-function renderGraph(){
+// Default day-view graph to be rendered
+function renderDayGraph(){
 	
 	//Width and height
 	var w = 700;
 	var h = 350;
 	var padding = 40;
 
+
 	var parseDate = d3.time.format("%H:%M").parse;
 
 	//Create scale functions
 	var xScale = d3.time.scale()
 						 .range([padding, w - padding * 2]);
+		
 
 	var yScale = d3.scale.linear()
-						 .domain([0, 3000])
+						 //.domain([0, 3000])
 						 .range([h - padding, padding]);
+				
 	// radius
-	var rScale = d3.scale.linear()
-						 .domain([0, 3000])
-						 .range([2, 5]);
+	//var rScale = d3.scale.linear()
+						 //.domain([0, 3000])
+	//					 .range([2, 5]);
 
 	//Define X axis
 	var xAxis = d3.svg.axis()
@@ -32,20 +35,25 @@ function renderGraph(){
 	var yAxis = d3.svg.axis()
 					  .scale(yScale)
 					  .orient("left")
-					  .ticks(5);
+					  .tickFormat(d3.format("d"));
 
 	//Create SVG element
 	var svg = d3.select(".chart")
 				.append("svg")
 				.attr("width", w)
 				.attr("height", h);
+	
 
 	(jsonPings.pings).forEach(function(d){
 		d.time = parseDate(d.time);
+		d.ping = +d.ping;
 	});
 
 
 	xScale.domain(d3.extent(jsonPings.pings, function(d) { return d.time; }));
+	yScale.domain([0, d3.max(jsonPings.pings, function(d) { return d.ping; })]);
+
+
     
 	//Create circles
 	svg.selectAll("circle")
@@ -58,7 +66,7 @@ function renderGraph(){
 	   .attr("cy", function(d) {
 	   		return yScale(d.ping);
 	   })
-	   .attr("r", 1)
+	   .attr("r", 0.6)
 	   .attr("fill", "white");
 
 	/*
@@ -80,6 +88,16 @@ function renderGraph(){
 	   .attr("font-size", "11px")
 	   .attr("fill", "red");
 		*/
+	//Y axis label
+	svg.append("text")
+    	.attr("class", "y label")
+    	.attr("text-anchor", "end")
+    	.attr("y", padding + 6)
+    	.attr("x", -padding)
+    	.attr("dy", ".75em")
+    	.attr("transform", "rotate(-90)")
+    	.attr("fill", "gray")
+   		.text("latency (ms)");
 
 	//Create X axis
 	svg.append("g")
@@ -95,4 +113,4 @@ function renderGraph(){
 }
 
 
-renderGraph();
+renderDayGraph();
