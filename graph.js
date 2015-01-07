@@ -4,8 +4,8 @@
 function renderDayGraph(){
 	
 	//Width and height
-	var w = 700;
-	var h = 350;
+	var w = 800;
+	var h = 450;
 	var padding = 40;
 
 
@@ -88,6 +88,7 @@ function renderDayGraph(){
 	   .attr("font-size", "11px")
 	   .attr("fill", "red");
 		*/
+
 	//Y axis label
 	svg.append("text")
     	.attr("class", "y label")
