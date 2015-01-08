@@ -22,10 +22,11 @@ html, body{
 .site-wrapper{
 	display:table;
 	margin-right: auto;
-  	margin-left: auto;
-
+  margin-left: auto;
 }
-
+.site-wrapper-inner{
+  display:table-cell;
+}
 /*
  * Header
  */
@@ -99,10 +100,11 @@ header{
 }
 .graph-description p{
   font-size: 14px;
+  position:absolute;
 }
 
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .masthead {
     float: left;
   }

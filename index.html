@@ -16,22 +16,24 @@
 
   <body>
     <div class="site-wrapper">
-      <header>
-        <h3 class="masthead">tophj</h3>
-        <nav>
-          <ul class="masthead-list">
-            <li class="default"><a href="http://tophj.github.io">home</a></li>
-            <li><a href="https://github.com/tophj">projects</a></li>
-            <li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
-          </ul>
-        <nav> 
-      </header>
+      <div class="site-wrapper-inner">
+        <header>
+          <h3 class="masthead">tophj</h3>
+          <nav>
+            <ul class="masthead-list">
+              <li class="default"><a href="http://tophj.github.io">home</a></li>
+              <li><a href="https://github.com/tophj">projects</a></li>
+              <li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
+            </ul>
+          <nav> 
+        </header>
 
-      <div class="graph-body">
-        <div class="chart"></div>
-        <div class="graph-description">
-            <h3 div="graph-title">the ping project</h3>             
-            <p class="lead">This graph displays the latency between my server and Google, taken over the course of a day. </p>
+        <div class="graph-body">
+          <div class="chart"></div>
+          <div class="graph-description">
+              <h3 div="graph-title">the ping project</h3>             
+              <p class="lead">This graph displays the latency between my server and Google. This data was taken over a single day, with a ping packet being sent every 2 seconds.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +46,9 @@
       <!-- Core files for rendering the graph
       ================================================== -->
       <script src="pingJSON.js"></script>
+      <script src="January7.js"></script>
       <script src="graph.js"></script>
+
 
       <!-- Placed at the end of the document so the pages load faster --> 
       <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>

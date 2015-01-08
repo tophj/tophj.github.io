@@ -3,8 +3,10 @@
 // Default day-view graph to be rendered
 function renderDayGraph(){
 	
+	jsonPings.pings = JanuaryPings.pings;
+
 	//Width and height
-	var width = 800;
+	var width = 1000;
 	var height = 450;
 	var padding = 40;
 	var parseDate = d3.time.format("%H:%M").parse;
@@ -15,6 +17,7 @@ function renderDayGraph(){
 		
 
 	var yScale = d3.scale.linear()
+						.domain([0,3500])
 						 .range([height - padding, padding]);
 				
 	//Define X axis
@@ -43,7 +46,7 @@ function renderDayGraph(){
 
 
 	xScale.domain(d3.extent(jsonPings.pings, function(d) { return d.time; }));
-	yScale.domain([0, d3.max(jsonPings.pings, function(d) { return d.ping; })]);
+	//yScale.domain([0, d3.max(jsonPings.pings, function(d) { return d.ping; })]);
 
 
     
