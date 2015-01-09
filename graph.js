@@ -6,9 +6,9 @@ function renderDayGraph(){
 	jsonPings.pings = JanuaryPings.pings;
 
 	//Width and height
-	var width = 1000;
-	var height = 450;
-	var padding = 40;
+	var width = 1250;
+	var height = 567;
+	var padding = 60;
 	var parseDate = d3.time.format("%H:%M").parse;
 
 	//Create scale functions
@@ -36,17 +36,42 @@ function renderDayGraph(){
 	var svg = d3.select(".chart")
 				.append("svg")
 				.attr("width", width)
-				.attr("height", height);
-	
+				.attr("height", height)
+				.attr("font-size", 18);
+	// Can uncomment later to add back in mean line
+    //var mean = 0;
 
+    //Loop through ping data and get the date, ping and calculate the mean
 	(jsonPings.pings).forEach(function(d){
 		d.time = parseDate(d.time);
 		d.ping = +d.ping;
+		//mean = mean + (+d.ping);
 	});
 
 
+
+	// mean = mean / ((jsonPings.pings).length)
+
+	// //Add mean line to svg
+	// var median = svg.append("line")
+ //                 .attr("x1", padding-6)
+ //                 .attr("y1", yScale(mean))
+ //                 .attr("x2", width - padding *2)
+ //                 .attr("y2", yScale(mean))
+ //                 .attr("stroke-width", 2)
+ //                 .attr("stroke", "red");
+
+ //    svg.append("text")
+ //    	.attr("class", "y label")
+ //    	.attr("text-anchor", "start")
+ //    	.attr("y", yScale(mean))
+ //    	.attr("x", padding -40)
+ //    	.attr("fill", "red")
+ //   		.text(mean);
+
+
 	xScale.domain(d3.extent(jsonPings.pings, function(d) { return d.time; }));
-	//yScale.domain([0, d3.max(jsonPings.pings, function(d) { return d.ping; })]);
+	//yScale.domain([0, d3.max(jsonPings.pings, function(d) { return d.ping; })]); <-- Uncomment for dynamic y range
 
 
     
@@ -59,30 +84,14 @@ function renderDayGraph(){
 	   		return xScale(d.time);
 	   })
 	   .attr("cy", function(d) {
-	   		return yScale(d.ping);
+	   		if(d.ping == "-1") {return yScale("3500")}
+	   		else { return yScale(d.ping)};
 	   })
-	   .attr("r", 0.6)
-	   .attr("fill", "white");
-
-	/*
-	//Create labels
-	svg.selectAll("text")
-	   .data(dataset)
-	   .enter()
-	   .append("text")
-	   .text(function(d) {
-	   		return d[0] + "," + d[1];
-	   })
-	   .attr("x", function(d) {
-	   		return xScale(d[0]);
-	   })
-	   .attr("y", function(d) {
-	   		return yScale(d[1]);
-	   })
-	   .attr("font-family", "sans-serif")
-	   .attr("font-size", "11px")
-	   .attr("fill", "red");
-		*/
+	   .attr("r", 0.75)
+	   .style("fill", function(d) {            
+            if (d.ping == "-1") {return "red"}  
+            else    { return "white" };      
+        }) 
 
 	//Y axis label
 	svg.append("text")

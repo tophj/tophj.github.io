@@ -21,8 +21,8 @@ html, body{
 }
 .site-wrapper{
 	display:table;
-	margin-right: auto;
-  margin-left: auto;
+	margin-right: 5%;
+  margin-left: 5%;
 }
 .site-wrapper-inner{
   display:table-cell;
@@ -37,7 +37,9 @@ header{
 }
 .masthead{
 	margin-top: 0px;
-  	float: left;
+  float: left;
+  font: 31px sans-serif;
+  font-weight: bold;
 
 }
 .masthead-list{
@@ -49,10 +51,10 @@ header{
 	margin-left: 20px;
 }
 .masthead-list >li > a{
-	font: 16px sans-serif;
+	font: 22px sans-serif;
 }
 .masthead-list > li > a {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
@@ -97,10 +99,11 @@ header{
 }
 .graph-description{
 	margin-top: 20px;
+  text-align: center;
 }
 .graph-description p{
-  font-size: 14px;
-  position:absolute;
+  font-size: 16px;
+  text-align: center;
 }
 
 
