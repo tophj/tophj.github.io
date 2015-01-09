@@ -1,0 +1,135 @@
+/*
+ * Globals
+ */
+
+/* Links */
+
+
+/*
+ * Base
+ */
+html, body{
+	height: 100%;
+	background-color: #333;
+	text-align: center;
+	color: white;
+
+
+}
+.site-wrapper{
+	display:table;
+	margin-right: 5%;
+  margin-left: 5%;
+}
+.site-wrapper-inner{
+  display:table-cell;
+}
+/*
+ * Header
+ */
+header{
+	margin-top: 20px;
+  	vertical-align: top;
+  	height: 50px;
+}
+.masthead{
+	margin-top: 0px;
+  float: left;
+  font: 31px sans-serif;
+  font-weight: bold;
+
+}
+.masthead-list{
+	vertical-align: top;
+}
+
+.masthead-list > li{
+	display: inline-block;
+	margin-left: 20px;
+}
+.masthead-list >li > a{
+	font: 22px sans-serif;
+}
+.masthead-list > li > a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-list > li > a:hover,
+.masthead-list > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+  text-decoration: none;
+}
+.masthead-list > .default > a,
+.masthead-list > .default > a:hover,
+.masthead-list > .default > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/*
+ * Graph & Description
+ */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: sans-serif;
+  fill: white;
+}
+
+.graph-body{
+  margin-bottom: 100px;
+  position:relative;
+}
+.graph-title{
+  margin-top: 15px;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.graph-body h3{
+	font-size: 22px;
+}
+.graph-description{
+	margin-top: 20px;
+  text-align: center;
+}
+.graph-description p{
+  font-size: 16px;
+  text-align: center;
+}
+
+/*
+ * Graph Statistics Table
+ */
+.graph-table{
+  margin-top: 60px;
+  margin-left:40%;
+  margin-right:40%;
+}
+.graph-table tr td{
+  text-align: center;
+}
+
+
+
+@media (min-width: 768px) {
+  .masthead {
+    float: left;
+  }
+  .masthead-list {
+    float: right;
+  }
+}
+
+
+
+
+
