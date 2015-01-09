@@ -88,11 +88,13 @@ header{
 }
 
 .graph-body{
-	margin-top: 30px;
-  	margin-bottom: 100px;
-  	position:relative;
-
-
+  margin-bottom: 100px;
+  position:relative;
+}
+.graph-title{
+  margin-top: 15px;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 .graph-body h3{
 	font-size: 16px;
@@ -103,6 +105,18 @@ header{
 }
 .graph-description p{
   font-size: 16px;
+  text-align: center;
+}
+
+/*
+ * Graph Statistics Table
+ */
+.graph-table{
+  margin-top: 60px;
+  margin-left:40%;
+  margin-right:40%;
+}
+.graph-table tr td{
   text-align: center;
 }
 

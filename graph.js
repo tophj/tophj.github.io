@@ -2,13 +2,15 @@
 
 // Default day-view graph to be rendered
 function renderDayGraph(){
-	
+	// for switching data sources
 	jsonPings.pings = JanuaryPings.pings;
 
-	//Width and height
+	// Width, height and padding
 	var width = 1250;
 	var height = 567;
 	var padding = 60;
+
+	// Time format
 	var parseDate = d3.time.format("%H:%M").parse;
 
 	//Create scale functions
@@ -20,62 +22,66 @@ function renderDayGraph(){
 						.domain([0,3500])
 						 .range([height - padding, padding]);
 				
-	//Define X axis
+	// Define X axis
 	var xAxis = d3.svg.axis()
 					  .scale(xScale)
 					  .orient("bottom")
 				.tickFormat(d3.time.format("%H:%M"));
 
-	//Define Y axis
+	// Define Y axis
 	var yAxis = d3.svg.axis()
 					  .scale(yScale)
 					  .orient("left")
 					  .tickFormat(d3.format("d"));
 
-	//Create SVG element
+	// Create SVG element
 	var svg = d3.select(".chart")
 				.append("svg")
 				.attr("width", width)
 				.attr("height", height)
 				.attr("font-size", 18);
-	// Can uncomment later to add back in mean line
-    //var mean = 0;
 
-    //Loop through ping data and get the date, ping and calculate the mean
+	var min = Number.MAX_VALUE;
+	var max = 0;
+    var average = 0;
+    var timedOut = 0;
+
+    // Loop through ping data and get the date, ping and calculate the average
 	(jsonPings.pings).forEach(function(d){
 		d.time = parseDate(d.time);
 		d.ping = +d.ping;
-		//mean = mean + (+d.ping);
+		average = average + (+d.ping);
+		if(d.ping < min && d.ping != -1){min = d.ping};
+		if(d.ping > max){max = d.ping};
+		if(d.ping == -1){timedOut = timedOut + 1};
 	});
 
+	// Calculate average ping and format to 2 sig figs.
+	average = average / ((jsonPings.pings).length);
+	var formatAverage = d3.format("r"),
+    	formatRoundedAverage = function(x) { return formatAverage(d3.round(x, 2)); };
 
+    // Calculate % of day spent timed-out :(
+	timedOut = timedOut * 2;
+	var secondsInADay = 86400;
+	timedOut = timedOut / secondsInADay;
+	var formatTimedOut = d3.format("p"),
+    	formatRoundedTimedOut = function(x) { return formatTimedOut(d3.round(x, 3)); };
 
-	// mean = mean / ((jsonPings.pings).length)
-
-	// //Add mean line to svg
-	// var median = svg.append("line")
- //                 .attr("x1", padding-6)
- //                 .attr("y1", yScale(mean))
- //                 .attr("x2", width - padding *2)
- //                 .attr("y2", yScale(mean))
- //                 .attr("stroke-width", 2)
- //                 .attr("stroke", "red");
-
- //    svg.append("text")
- //    	.attr("class", "y label")
- //    	.attr("text-anchor", "start")
- //    	.attr("y", yScale(mean))
- //    	.attr("x", padding -40)
- //    	.attr("fill", "red")
- //   		.text(mean);
-
+    // add in min, max, average and timed-out to table
+	d3.select(".min-ping")
+		.text(min + " ms");
+	d3.select(".max-ping")
+		.text(max + " ms");
+	d3.select(".average-ping")
+		.text(formatRoundedAverage(average) + " ms");
+	d3.select(".timed-out")
+		.text(formatRoundedTimedOut(timedOut));
 
 	xScale.domain(d3.extent(jsonPings.pings, function(d) { return d.time; }));
 	//yScale.domain([0, d3.max(jsonPings.pings, function(d) { return d.ping; })]); <-- Uncomment for dynamic y range
 
-
-    
-	//Create circles
+	// Create circles
 	svg.selectAll("circle")
 	   .data(jsonPings.pings)
 	   .enter()
@@ -93,7 +99,17 @@ function renderDayGraph(){
             else    { return "white" };      
         }) 
 
-	//Y axis label
+	// X axis time label
+	svg.append("text")
+    	.attr("class", "x label")
+    	.attr("text-anchor", "end")
+    	.attr("y", height-padding+8)
+    	.attr("x", width-padding*2-8)
+    	.attr("dy", ".75em")
+    	.attr("fill", "gray")
+   		.text("time (H:M)");
+
+	// Y axis latency label
 	svg.append("text")
     	.attr("class", "y label")
     	.attr("text-anchor", "end")
@@ -104,13 +120,13 @@ function renderDayGraph(){
     	.attr("fill", "gray")
    		.text("latency (ms)");
 
-	//Create X axis
+	// Append the X axis to the SVG
 	svg.append("g")
 		.attr("class", "axis")
 		.attr("transform", "translate(0," + (height - padding) + ")")
 		.call(xAxis);
 
-	//Create Y axis
+	// Append the Y axis to the SVG
 	svg.append("g")
 		.attr("class", "axis")
 		.attr("transform", "translate(" + padding + ",0)")
