@@ -3,6 +3,7 @@
 // Default day-view graph to be rendered
 function renderDayGraph(){
 
+
 	// Width, height and padding
 	var width = 1250;
 	var height = 567;
@@ -10,6 +11,7 @@ function renderDayGraph(){
 
 	// Time format
 	var parseDate = d3.time.format("%H:%M").parse;
+	var formatTime = d3.time.format("%H:%M");
 
 	//Create scale functions
 	var xScale = d3.time.scale()
@@ -32,12 +34,20 @@ function renderDayGraph(){
 					  .orient("left")
 					  .tickFormat(d3.format("d"));
 
+	// Define 'div' for tooltips
+	var div = d3.select("body")
+    	.append("div")  // declare the tooltip div 
+    	.attr("class", "tooltip")
+    	.style("opacity", 0);
+
+
 	// Create SVG element
 	var svg = d3.select(".chart")
 				.append("svg")
+				.attr("class", "n")
 				.attr("width", width)
 				.attr("height", height)
-				.attr("font-size", 18);
+				.attr("font-size", 18)
 
 	var min = Number.MAX_VALUE;
 	var max = 0;
@@ -79,6 +89,8 @@ function renderDayGraph(){
 	xScale.domain(d3.extent(januaryPings.pings, function(d) { return d.time; }));
 	//yScale.domain([0, d3.max(januaryPings.pings, function(d) { return d.ping; })]); <-- Uncomment for dynamic y range
 
+
+
 	// Create circles
 	svg.selectAll("circle")
 	   .data(januaryPings.pings)
@@ -95,7 +107,31 @@ function renderDayGraph(){
 	   .style("fill", function(d) {            
             if (d.ping == "-1") {return "red"}  
             else    { return "white" };      
-        }) 
+        })
+	   .attr("stroke-width", 4)
+       .attr("stroke", "black")
+       .style("stroke-opacity", 0.0)
+	   .on("mouseover", function(d) {        
+            div.transition()
+                .duration(500)    
+                .style("opacity", 0);
+            div.transition()
+                .duration(200)    
+                .style("opacity", .9);    
+            div .html(function() {
+		   		if(d.ping == "-1") {
+		   			return "Time : " + formatTime(d.time) + "<br>"
+	                + "Ping : " + "Timeout"  
+        		}
+		   		else { 
+		   			return "Time : " + formatTime(d.time) + "<br>"
+	                + "Ping : " + d.ping
+				}})
+				.style("left", (d3.event.pageX) + "px")             
+                .style("top", (d3.event.pageY - 28) + "px");
+            });
+
+
 
 	// X axis time label
 	svg.append("text")
@@ -129,6 +165,9 @@ function renderDayGraph(){
 		.attr("class", "axis")
 		.attr("transform", "translate(" + padding + ",0)")
 		.call(yAxis);
+
+
+
 }
 
 
