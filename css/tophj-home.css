@@ -12,7 +12,7 @@ html, body{
 	height: 100%;
 	background-color: #333;
 	text-align: center;
-	color: white;
+	color: #fff;
 
 
 }
@@ -31,6 +31,7 @@ header{
 	margin-top: 20px;
   	vertical-align: top;
   	height: 50px;
+    width: 100%;
 }
 .masthead{
 	margin-top: 0px;
@@ -53,7 +54,7 @@ header{
 .masthead-list > li > a {
   font-size: 18px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
+  color: #333; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
@@ -77,12 +78,12 @@ header{
 .axis path,
 .axis line {
   fill: none;
-  stroke: white;
+  stroke: #fff;
   shape-rendering: crispEdges;
 }
 .axis text {
   font-family: sans-serif;
-  fill: white;
+  fill: #fff;
 }
 
 .graph-body{
@@ -129,7 +130,7 @@ div.tooltip {
   font: 14px sans-serif;        
   background: #333;   
   border: 0px;      
-         
+  color:#fff;
   pointer-events: none;         
 }
 /*

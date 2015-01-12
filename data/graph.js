@@ -91,6 +91,49 @@ function renderDayGraph(){
 
 
 
+	// create color gradient
+	var gradient = svg
+    .append("linearGradient")
+    .attr("y1", "0%")
+    .attr("y2", "100%")
+    .attr("x1", "0%")
+    .attr("x2", "0%")
+    .attr("id", "gradient")
+    .attr("gradientUnits", "userSpaceOnUse")
+
+	// max latency to about 1200 should be red
+	gradient
+	    .append("stop")
+	    .attr("offset", "0%")
+	    .attr("stop-color", "#f00")
+
+	gradient
+	    .append("stop")
+	    .attr("offset", "65.71%")
+	    .attr("stop-color", "#f00")
+	// 1200 - 500 should be red-yellow gradient
+	gradient
+	    .append("stop")
+	    .attr("offset", "65.71%")
+	    .attr("stop-color", "#f00")
+	gradient
+	    .append("stop")
+	    .attr("offset", "85.71%")
+	    .attr("stop-color", "#ff0")
+	// 500 - 0 should be yellow-yellow green
+	gradient
+	    .append("stop")
+	    .attr("offset", "85.71%")
+	    .attr("stop-color", "#ff0")
+
+	gradient
+	    .append("stop")
+	    .attr("offset", "100%")
+	    .attr("stop-color", "#0f0")
+
+
+
+
 	// Create circles
 	svg.selectAll("circle")
 	   .data(januaryPings.pings)
@@ -103,10 +146,10 @@ function renderDayGraph(){
 	   		if(d.ping == "-1") {return yScale("3500")}
 	   		else { return yScale(d.ping)};
 	   })
-	   .attr("r", 0.75)
+	   .attr("r", 0.8)
 	   .style("fill", function(d) {            
-            if (d.ping == "-1") {return "red"}  
-            else    { return "white" };      
+             if (d.ping == "-1") {return "white"}
+             else { return "url(#gradient)" };      
         })
 	   .attr("stroke-width", 4)
        .attr("stroke", "black")
@@ -135,7 +178,6 @@ function renderDayGraph(){
 	    		.duration(700)    
             	.style("opacity", 0); 
 	    });
-
 
 
 	// X axis time label
