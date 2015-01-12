@@ -161,7 +161,7 @@ gradient.append("stop")
 gradient.append("stop")
     .attr("offset", "65.71%")
     .attr("stop-color", "#f00")
-    
+
 gradient.append("stop")
     .attr("offset", "85.71%")
     .attr("stop-color", "#ff0")
@@ -174,6 +174,7 @@ gradient.append("stop")
 gradient.append("stop")
     .attr("offset", "100%")
     .attr("stop-color", "#0f0")
+
 
 
 //************************************************************
@@ -227,11 +228,6 @@ circles.on("mouseover", function(d) {
 		.duration(700)    
     	.style("opacity", 0); 
 });
-
-
-
-
-
 
 
 
