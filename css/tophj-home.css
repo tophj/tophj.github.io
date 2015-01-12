@@ -10,7 +10,7 @@
  */
 html, body{
 	height: 100%;
-	background-color: #333;
+	background-color: #000;
 	text-align: center;
 	color: #fff;
 
@@ -18,8 +18,7 @@ html, body{
 }
 .site-wrapper{
 	display:table;
-	margin-right: 5%;
-  margin-left: 5%;
+  width: 100%;
 }
 .site-wrapper-inner{
   display:table-cell;
@@ -29,19 +28,20 @@ html, body{
  */
 header{
 	margin-top: 20px;
-  	vertical-align: top;
-  	height: 50px;
-    width: 100%;
+	vertical-align: top;
+	height: 50px;
+  z-index: 10;
 }
 .masthead{
 	margin-top: 0px;
+  margin-left:20px;
   float: left;
   font: 31px sans-serif;
   font-weight: bold;
-
 }
 .masthead-list{
 	vertical-align: top;
+  margin-right:20px;
 }
 
 .masthead-list > li{
@@ -75,20 +75,27 @@ header{
 /*
  * Graph & Description
  */
-.axis path,
-.axis line {
+.xaxis path,
+.xaxis line,
+.yaxis path,
+.yaxis line {
   fill: none;
   stroke: #fff;
   shape-rendering: crispEdges;
 }
-.axis text {
+.xaxis text,
+.yaxis text {
   font-family: sans-serif;
   fill: #fff;
 }
-
+.chart{
+  margin-right: 5%;
+  margin-left: 5%;
+}
 .graph-body{
   margin-bottom: 100px;
   position:relative;
+  display:block;
 }
 .graph-title{
   margin-top: 15px;
@@ -161,8 +168,4 @@ div.tooltip {
     float: right;
   }
 }
-
-
-
-
 
