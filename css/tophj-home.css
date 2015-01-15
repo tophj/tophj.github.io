@@ -14,15 +14,14 @@ html, body{
 	text-align: center;
 	color: #fff;
 
-
 }
-.site-wrapper{
+/*.site-wrapper{
 	display:table;
   width: 100%;
 }
 .site-wrapper-inner{
   display:table-cell;
-}
+}*/
 /*
  * Header
  */
@@ -99,8 +98,9 @@ header{
 }
 .graph-title{
   margin-top: 15px;
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 30px;
+  font-weight: bold;
 }
 .graph-body h3{
 	font-size: 22px;

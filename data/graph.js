@@ -6,8 +6,9 @@
 //************************************************************
 
 var margin = {top: 20, right: 30, bottom: 30, left: 50},
-    width = 1250 - margin.left - margin.right,
-    height = 567 - margin.top - margin.bottom;
+    width = parseInt(d3.select('.chart').style('width'), 10),
+    width = width - margin.left - margin.right,
+    height = width / 2;
 
 // Time format
 var parseDate = d3.time.format("%H:%M").parse;
@@ -15,7 +16,7 @@ var formatTime = d3.time.format("%H:%M");
 
 
 var x = d3.time.scale()
-					 .range([0, width]);
+					 .range([1, width]);
 	
 var y = d3.scale.linear()
 					.domain([0,3500])
@@ -94,12 +95,11 @@ x.domain(d3.extent(januaryPings.pings, function(d) { return d.time; }));
 
 var svg = d3.select(".chart")
 	.append("svg")
-	.attr("class", "n")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
 	.attr("font-size", 18)
 	.append("g")
-	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // X axis time label
 svg.append("text")
@@ -148,30 +148,35 @@ var gradient = svg
     .attr("gradientUnits", "userSpaceOnUse")
 
 // max latency to about 1200 should be red
-
 gradient.append("stop")
+    .attr("class","top-red-start")
     .attr("offset", "0%")
     .attr("stop-color", "#f00")
 
 gradient.append("stop")
+    .attr("class","top-red-stop")
     .attr("offset", "65.71%")
     .attr("stop-color", "#f00")
 // 1200 - 500 should be red-yellow gradient
 
 gradient.append("stop")
+    .attr("class","gradient-red-start")
     .attr("offset", "65.71%")
     .attr("stop-color", "#f00")
 
 gradient.append("stop")
+.attr("class","gradient-yellow-stop")
     .attr("offset", "85.71%")
     .attr("stop-color", "#ff0")
 // 500 - 0 should be yellow-yellow green
     
 gradient.append("stop")
+.attr("class","gradient-yellow-start")
     .attr("offset", "85.71%")
     .attr("stop-color", "#ff0")
     
 gradient.append("stop")
+.attr("class","gradient-green-stop")
     .attr("offset", "100%")
     .attr("stop-color", "#0f0")
 
@@ -229,5 +234,88 @@ circles.on("mouseover", function(d) {
     	.style("opacity", 0); 
 });
 
+//************************************************************
+// Resize graph because of window resize
+//************************************************************  
 
+
+function resize() {
+
+  var width = parseInt(d3.select(".chart").style("width"),10),
+  width = width - margin.left - margin.right,
+  height = width / 2;
+
+  // getElementById('div_register').style.width='500px';
+  // getElementById('div_register').style.width='500px';
+
+
+svg
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+
+
+
+  /* Update the range of the scale with new width/height */
+  x.range([1, width]);
+  y.range([height, 0]);
+   
+  /* Update the axis with the new scale */
+  svg.select('.xaxis')
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+   
+  svg.select('.yaxis')
+    .call(yAxis);
+   
+
+
+  /* Force D3 to recalculate and update the circles */
+  svg.selectAll("circle")
+    .attr("cx", function(d) {
+      return x(d.time);
+   })
+   .attr("cy", function(d) {
+      if(d.ping == "-1") {return y("3500")}
+      else { return y(d.ping)};
+   })
+   .attr("r", 0.8);
+
+
+
+   svg.selectAll("gradient")
+    .attr("y1", "0%")
+    .attr("y2", "100%")
+    .attr("x1", "0%")
+    .attr("x2", "0%")
+    .attr("gradientUnits", "userSpaceOnUse");
+
+// max latency to about 1200 should be red
+svg.selectAll("top-red-start")
+    .attr("offset", "0%")
+    .attr("stop-color", "#f00")
+
+svg.selectAll("top-red-stop")
+    .attr("offset", "65.71%")
+    .attr("stop-color", "#f00")
+// 1200 - 500 should be red-yellow gradient
+
+svg.selectAll("gradient-red-start")
+    .attr("offset", "65.71%")
+    .attr("stop-color", "#f00")
+
+svg.selectAll("gradient-yellow-stop")
+    .attr("offset", "85.71%")
+    .attr("stop-color", "#ff0")
+// 500 - 0 should be yellow-yellow green
+    
+svg.selectAll("gradient-yellow-start")
+    .attr("offset", "85.71%")
+    .attr("stop-color", "#ff0")
+    
+svg.selectAll("gradient-green-stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#0f0")
+
+}
+//d3.select(window).on('resize', resize);  uncomment for resizing of graph 
 

@@ -15,45 +15,45 @@
   </head>
 
   <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <header>
-          <h3 class="masthead">tophj</h3>
-          <nav>
-            <ul class="masthead-list">
-              <li class="default"><a href="http://tophj.github.io">home</a></li>
-              <li><a href="https://github.com/tophj/tophj.github.io">code</a></li>
-              <li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
-            </ul>
-          </nav> 
-        </header>
-        <div class="graph-body">
-          <div class="graph-title">Ping data for January 8th, 2015</div>
-          <div class="chart"></div>
-          <div class="graph-description">
-              <h3 class="graph-title">the ping project</h3>             
-              <p class="lead">This graph displays the latency between my server and Google. This data was taken from 00:00 to 23:59 on January 8th, with a ping packet being sent every 2 seconds. A colored dot represents a successful ping, while a white dot indicates a request timed out.</p>
-          </div>    
-          <div class="graph-table">
-            <table class="table table-bordered">
-              <tr>
-                <td>Min ping</td>
-                <td class="min-ping"></td>
-              </tr>
-              <tr>
-                <td>Max ping</td>
-                <td class="max-ping"></td>
-              </tr>
-              <tr>
-                <td>Average ping</td>
-                <td class="average-ping"></td>
-              </tr>
-              <tr>
-                <td>% of pings timed out</td>
-                <td class="timed-out"></td>
-              </tr>
-            </table>
-          </div>
+    <div class="container-fluid">
+      <div class="row">
+      <header>
+        <h3 class="masthead">tophj</h3>
+        <nav>
+          <ul class="masthead-list">
+            <li class="default"><a href="http://tophj.github.io">home</a></li>
+            <li><a href="https://github.com/tophj/tophj.github.io">code</a></li>
+            <li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
+          </ul>
+        </nav> 
+      </header>
+      </div>
+      <div class="graph-body">
+        <div class="graph-title">My ping data for January 8th, 2015</div>
+        <div class="chart"></div>
+        <div class="graph-description">
+            <h3 class="graph-title">the ping project</h3>             
+            <p class="lead">This graph displays the latency between my server and Google. This data was taken from 00:00 to 23:59 on January 8th, with a ping packet being sent every 2 seconds. A colored dot represents a successful ping, while a white dot indicates a request timed out.</p>
+        </div>    
+        <div class="graph-table">
+          <table class="table table-bordered">
+            <tr>
+              <td>Min ping</td>
+              <td class="min-ping"></td>
+            </tr>
+            <tr>
+              <td>Max ping</td>
+              <td class="max-ping"></td>
+            </tr>
+            <tr>
+              <td>Average ping</td>
+              <td class="average-ping"></td>
+            </tr>
+            <tr>
+              <td>% of pings timed out</td>
+              <td class="timed-out"></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
@@ -67,7 +67,6 @@
       ================================================== -->
       <script src="data/January8.js"></script>
       <script src="data/graph.js"></script>
-
 
       <!-- Placed at the end of the document so the pages load faster --> 
       <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
