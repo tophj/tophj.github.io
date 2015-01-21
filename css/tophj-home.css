@@ -85,26 +85,25 @@ header{
   color:#000;
   border-bottom-color: #000;
 }
-
+#main-image-div{
+  height:75%;
+}
 .container-fluid{
   width:100%;
   height:100%;
 }
-.background-img {
+.main-image {
+  background-image:url(../resources/desk.jpg);
   position:relative;
-  top: 0px;
-  background-size: 100%;
   display: block;
-  z-index: 1;
   width:100%;
-  height:70%;
+  height:100%;
+  background-size: cover;
+  z-index: 1;
+  background-repeat:no-repeat;
 
 }
 
-.desk-image{
-  background-image:url('../resources/desk.jpg');
-  height: 70%;
-}
 .description{
 /*  width:70%;*/
   height:30%;
