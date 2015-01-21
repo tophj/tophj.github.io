@@ -10,154 +10,105 @@
  */
 html, body{
 	height: 100%;
-	background-color: #000;
+	background-color: #fff;
 	text-align: center;
-	color: #fff;
+	color: #000;
+  font-family: 'Lato', sans-serif;
 
 }
-/*.site-wrapper{
-	display:table;
-  width: 100%;
-}
-.site-wrapper-inner{
-  display:table-cell;
-}*/
+
 /*
  * Header
  */
 header{
-	margin-top: 20px;
-	vertical-align: top;
-	height: 50px;
-  z-index: 10;
+  height:50px;
+  top:0;
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #e2e2e2;
+  padding:0 20px;
+  z-index:10;
+  position:fixed;
+  opacity: 0.7;
+  -webkit-transform:translate(0,0);
+  -moz-transform:translate(0,0);
+  -ms-transform:translate(0,0);
+  -o-transform:translate(0,0);
+  transform:translate(0,0);
+  -webkit-transition:all .3s;
+  -moz-transition:all .3s;
+  -ms-transition:all .3s;
+  -o-transition:all .3s;
+  transition:all .3s;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box
 }
 .masthead{
-	margin-top: 0px;
-  margin-left:20px;
+
+  margin: 10px;
   float: left;
-  font: 31px sans-serif;
+  font: 22px 'Lato', sans-serif;
   font-weight: bold;
 }
 .masthead-list{
+  margin:10px;
 	vertical-align: top;
-  margin-right:20px;
+  color: #000;
 }
 
 .masthead-list > li{
 	display: inline-block;
 	margin-left: 20px;
+  color: #000;
 }
 .masthead-list >li > a{
-	font: 22px sans-serif;
+	font: 22px 'Lato', sans-serif;
+
 }
 .masthead-list > li > a {
   font-size: 18px;
   font-weight: bold;
-  color: #333; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
+  color: gray;
 }
 .masthead-list > li > a:hover,
 .masthead-list > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: #000;
+/*  border-bottom-color: rgba(255,255,255,.25);*/
   text-decoration: none;
 }
 .masthead-list > .default > a,
 .masthead-list > .default > a:hover,
 .masthead-list > .default > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+  color:#000;
+  border-bottom-color: #000;
 }
 
-/*
- * Graph & Description
- */
-.xaxis path,
-.xaxis line,
-.yaxis path,
-.yaxis line {
-  fill: none;
-  stroke: #fff;
-  shape-rendering: crispEdges;
+.container-fluid{
+  width:100%;
+  height:100%;
 }
-.xaxis text,
-.yaxis text {
-  font-family: sans-serif;
-  fill: #fff;
-}
-.chart{
-  margin-right: 5%;
-  margin-left: 5%;
-}
-.graph-body{
-  margin-bottom: 100px;
+.background-img {
   position:relative;
-  display:block;
-}
-.graph-title{
-  margin-top: 15px;
-  font-size: 26px;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-.graph-body h3{
-	font-size: 22px;
-}
-.graph-description{
-	margin-top: 20px;
-  text-align: center;
-  margin-left:15%;
-  margin-right:15%;
-}
-.graph-description p{
-  font-size: 16px;
-  text-align: center;
+  top: 0px;
+  background-size: 100%;
+  display: block;
+  z-index: 1;
+  width:100%;
+  height:70%;
+
 }
 
-/*
- * Graph Statistics Table
- */
-.graph-table{
-  margin-top: 60px;
-  margin-left:40%;
-  margin-right:40%;
+.desk-image{
+  background-image:url('desk.jpg');
+  height: 70%;
 }
-.graph-table tr td{
-  text-align: center;
+.description{
+/*  width:70%;*/
+  height:30%;
 }
-
-div.tooltip {   
-  position: absolute;           
-  text-align: center;           
-  width: 150px;                  
-  height: 35px;                 
-  padding: 2px;             
-  font: 14px sans-serif;        
-  background: #333;   
-  border: 0px;      
-  color:#fff;
-  pointer-events: none;         
-}
-/*
-* tooltips
-*/
-
-/*.d3-tip text {
-  fill: black;
-  font-size: 12px;
-  stroke: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-.rule {
-  stroke-width: 1px;
-  stroke: #c00;
-  shape-rendering: crispedges;
-}
-*/
 
 
 @media (min-width: 768px) {

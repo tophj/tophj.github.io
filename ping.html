@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My Guthub hosted webpage.">
+    <meta name="author" content="Chris Jones">
+    <link rel="icon" href="resources/terminal.ico">
+    <title>tophj</title>
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/tophj-ping.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+      <header>
+        <h3 class="masthead">tophj</h3>
+        <nav>
+          <ul class="masthead-list">
+            <li class="default"><a href="http://tophj.github.io">home</a></li>
+            <li><a href="https://github.com/tophj/tophj.github.io">code</a></li>
+            <li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
+          </ul>
+        </nav> 
+      </header>
+      </div>
+      <div class="graph-body">
+        <div class="graph-title">Ping data for January 8th, 2015</div>
+        <div class="chart"></div>
+        <div class="graph-description">           
+            <p class="lead">This graph displays the latency between my server and Google. This data was taken from 00:00 to 23:59 on January 8th, with a ping packet being sent every 2 seconds. A colored dot represents a successful ping, while a white dot indicates a request timed out.</p>
+        </div>    
+        <div class="graph-table">
+          <table class="table table-bordered">
+            <tr>
+              <td>Min ping</td>
+              <td class="min-ping"></td>
+            </tr>
+            <tr>
+              <td>Max ping</td>
+              <td class="max-ping"></td>
+            </tr>
+            <tr>
+              <td>Average ping</td>
+              <td class="average-ping"></td>
+            </tr>
+            <tr>
+              <td>% of pings timed out</td>
+              <td class="timed-out"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+      <!-- D3 for graphs -->
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+      <!-- Core files for rendering the graph
+      ================================================== -->
+      <script src="data/January8.js"></script>
+      <script src="data/graph.js"></script>
+
+      <!-- Placed at the end of the document so the pages load faster --> 
+      <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

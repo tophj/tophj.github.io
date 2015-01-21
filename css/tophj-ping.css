@@ -1,0 +1,171 @@
+/*
+ * Globals
+ */
+
+/* Links */
+
+
+/*
+ * Base
+ */
+html, body{
+	height: 100%;
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+
+}
+/*.site-wrapper{
+	display:table;
+  width: 100%;
+}
+.site-wrapper-inner{
+  display:table-cell;
+}*/
+/*
+ * Header
+ */
+header{
+	margin-top: 20px;
+	vertical-align: top;
+	height: 50px;
+  z-index: 10;
+}
+.masthead{
+	margin-top: 0px;
+  margin-left:20px;
+  float: left;
+  font: 31px sans-serif;
+  font-weight: bold;
+}
+.masthead-list{
+	vertical-align: top;
+  margin-right:20px;
+}
+
+.masthead-list > li{
+	display: inline-block;
+	margin-left: 20px;
+}
+.masthead-list >li > a{
+	font: 22px sans-serif;
+}
+.masthead-list > li > a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* IE8 proofing */
+  color: rgba(255,255,255,.75);
+  border-bottom: 2px solid transparent;
+}
+.masthead-list > li > a:hover,
+.masthead-list > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(255,255,255,.25);
+  text-decoration: none;
+}
+.masthead-list > .default > a,
+.masthead-list > .default > a:hover,
+.masthead-list > .default > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/*
+ * Graph & Description
+ */
+.xaxis path,
+.xaxis line,
+.yaxis path,
+.yaxis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+.xaxis text,
+.yaxis text {
+  font-family: sans-serif;
+  fill: #fff;
+}
+.chart{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.graph-body{
+  margin-bottom: 100px;
+  position:relative;
+  display:block;
+}
+.graph-title{
+  margin-top: 15px;
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.graph-body h3{
+	font-size: 22px;
+}
+.graph-description{
+	margin-top: 20px;
+  text-align: center;
+  margin-left:15%;
+  margin-right:15%;
+}
+.graph-description p{
+  font-size: 16px;
+  text-align: center;
+}
+
+/*
+ * Graph Statistics Table
+ */
+.graph-table{
+  margin-top: 60px;
+  margin-left:40%;
+  margin-right:40%;
+}
+.graph-table tr td{
+  text-align: center;
+}
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 150px;                  
+  height: 35px;                 
+  padding: 2px;             
+  font: 14px sans-serif;        
+  background: #333;   
+  border: 0px;      
+  color:#fff;
+  pointer-events: none;         
+}
+/*
+* tooltips
+*/
+
+/*.d3-tip text {
+  fill: black;
+  font-size: 12px;
+  stroke: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.rule {
+  stroke-width: 1px;
+  stroke: #c00;
+  shape-rendering: crispedges;
+}
+*/
+
+
+@media (min-width: 768px) {
+  .masthead {
+    float: left;
+  }
+  .masthead-list {
+    float: right;
+  }
+}
+
