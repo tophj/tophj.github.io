@@ -103,13 +103,31 @@ header{
   background-repeat:no-repeat;
 
 }
-
-.description{
-/*  width:70%;*/
+.about-me{
+  padding-left: 15%;
+  padding-right:15%;
+  padding-top:20px;
   height:30%;
+  text-align: left;
+  font-size:17px;
+}
+.about-me h1{
+  text-align:center;
+  padding-bottom: 10px
 }
 
-
+.experience{
+  padding-left: 15%;
+  padding-right:15%;
+  padding-top:20px;
+  height:30%;
+  text-align: left;
+  font-size:17px;
+}
+.experience h1{
+  text-align:center;
+  padding-bottom: 10px
+}
 @media (min-width: 768px) {
   .masthead {
     float: left;
