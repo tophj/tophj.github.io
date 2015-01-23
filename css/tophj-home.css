@@ -14,7 +14,6 @@ html, body{
 	text-align: center;
 	color: #000;
   font-family: 'Lato', sans-serif;
-
 }
 
 /*
@@ -45,21 +44,23 @@ header{
   box-sizing:border-box
 }
 .masthead{
-
-  margin: 10px;
+  margin-top: 10px;
   float: left;
+  position:fixed;
   font: 22px 'Lato', sans-serif;
   font-weight: bold;
 }
 .masthead-list{
+  float:right;
   margin:10px;
 	vertical-align: top;
   color: #000;
+  padding:0;
 }
 
 .masthead-list > li{
 	display: inline-block;
-	margin-left: 20px;
+	margin-right: 20px;
   color: #000;
 }
 .masthead-list >li > a{
@@ -129,15 +130,4 @@ header{
   padding-bottom: 10px
 }
 
-
-
-
-@media (min-width: 768px) {
-  .masthead {
-    float: left;
-  }
-  .masthead-list {
-    float: right;
-  }
-}
 
