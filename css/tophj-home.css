@@ -20,12 +20,12 @@ html, body{
  * Header
  */
 header{
-  height:50px;
+  height:3.125em;
   top:0;
   width:100%;
   background:#fff;
-  border-bottom:1px solid #e2e2e2;
-  padding:0 20px;
+  border-bottom:0.0625em solid #e2e2e2;
+  padding:0 1.25em;
   z-index:10;
   position:fixed;
   opacity: 0.7;
@@ -45,7 +45,7 @@ header{
   box-sizing:border-box
 }
 .masthead{
-  margin-top: 10px;
+  margin-top: 0.625em;
   float: left;
   position:fixed;
   font-family:'Lato', sans-serif;
@@ -54,7 +54,7 @@ header{
 }
 .masthead-list{
   float:right;
-  margin:10px;
+  margin:0.625em;
 	vertical-align: top;
   color: #000;
   padding:0;
@@ -62,7 +62,7 @@ header{
 
 .masthead-list > li{
 	display: inline-block;
-	margin-right: 20px;
+	margin-right: 1.25em;
   color: #000;
 }
 .masthead-list >li > a{
@@ -73,7 +73,7 @@ header{
 .masthead-list > li > a {
   font-size: 1.125em;
   font-weight: bold;
-  border-bottom: 2px solid transparent;
+  border-bottom: 0.125em solid transparent;
   color: gray;
 }
 .masthead-list > li > a:hover,
@@ -110,27 +110,27 @@ header{
 .about-me{
   padding-left: 15%;
   padding-right:15%;
-  padding-top:20px;
+  padding-top:1.25em;
   height:30%;
   text-align: left;
   font-size:1.0625em;
 }
 .about-me h1{
   text-align:center;
-  padding-bottom: 10px
+  padding-bottom: 0.625em
 }
 
 .experience{
   padding-left: 15%;
   padding-right:15%;
-  padding-top:20px;
+  padding-top:1.25em;
   height:30%;
   text-align: left;
   font-size:1.0625em;
 }
 .experience h1{
   text-align:center;
-  padding-bottom: 10px
+  padding-bottom: 0.625em
 }
 @media only screen and (max-width:768px){
   /* styles for mobile browsers smaller than 768; (iPad) */
