@@ -103,7 +103,7 @@ header{
       rgba(0, 0, 0, 0.2), 
       rgba(0, 0, 0, 0.2)
     ),
-    url(../resources/chicago.jpg);
+    url(../resources/eitai.jpg);
 /*  background:rgb(96, 96, 96);*/
 /*  background-image:url(../resources/oc-ferris-wheel.jpg);*/
   position:relative;
@@ -114,6 +114,15 @@ header{
   z-index: 1;
   background-repeat:no-repeat;
   opacity:0.95;
+
+}
+.main-image-text{
+  height:100%;
+  display:inline-block;
+  vertical-align: middle;
+  padding-top:20%;
+  color:#fff;
+  font-size:2.0em;
 
 }
 #about-me-div{
@@ -134,7 +143,6 @@ header{
   padding-top:1em;
   background-color: #fff;
   color:#333;
-
 }
 .about-me h2{
   margin:0em;
@@ -143,7 +151,6 @@ header{
   padding-bottom: 0.625em;
   padding-top:0.625em;
 }
-
 .experience{
   padding-top:1.25em;
   height:30%;
@@ -156,7 +163,6 @@ header{
   text-align:center;
   padding-bottom: 0.8em;
   padding-top:0.9em;
-
 }
 .personal-projects{
   padding-top:1.25em;
