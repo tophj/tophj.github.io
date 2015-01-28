@@ -14,26 +14,20 @@ html, body{
 	text-align: center;
 	color: #333;
   font-family: 'Lato', sans-serif;
-/*  background:url(../resources/desk.jpg) no-repeat center center fixed;*/
-/*  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
 }
 
 /*
  * Header
  */
 header{
-  height:3.125em;
+  height:5%;
   top:0;
   width:100%;
-  background:#fff;
   border-bottom:0.0625em solid #e2e2e2;
   padding:0 1.0em;
   z-index:10;
   position:fixed;
-  opacity: 0.7;
+  opacity: 0.8;
   font-family: 'Lato', sans-serif;
   -webkit-transform:translate(0,0);
   -moz-transform:translate(0,0);
@@ -49,38 +43,40 @@ header{
   -moz-box-sizing:border-box;
   box-sizing:border-box
 }
+.navbar{
+  height:100%;
+  width:100%;
+  margin:0em;
+  border:0em;
+}
 .masthead{
-  margin-top: 0.625em;
+  font-size:1.8em;
+  margin-top: 1.400rem;
+  margin-left:1.0em;
   float: left;
-  position:fixed;
   font-family:'Lato', sans-serif;
-  font-size:1.325em;
   font-weight: bold;
-  color:#000;
+  color:#fff;
+  vertical-align: center;
 }
 .masthead-list{
   float:right;
-  margin:0.625em;
-	vertical-align: top;
-  color: #000;
+  margin-top: 1.400rem;
+  color: #fff;
   padding:0;
 }
 
 .masthead-list > li{
 	display: inline-block;
 	margin-right: 1.25em;
-  color: #000;
 }
 .masthead-list >li > a{
 	font-family:'Lato', sans-serif;
-  font-size:1.325em;
-
-}
-.masthead-list > li > a {
-  font-size: 1.125em;
+  margin-top: 1.200em;
+  font-size:1.5em;
   font-weight: bold;
   border-bottom: 0.125em solid transparent;
-  color: gray;
+  color: #eee;
 }
 .masthead-list > li > a:hover,
 .masthead-list > li > a:focus {
@@ -91,18 +87,25 @@ header{
 .masthead-list > .default > a,
 .masthead-list > .default > a:hover,
 .masthead-list > .default > a:focus {
-  color:#000;
-  border-bottom-color: #000;
+  color:#fff;
+  border-bottom-color: #eee;
 }
 #main-image-div{
-  height:93.5%;
+  height:100%;
 }
 .container-fluid{
   width:100%;
   height:100%;
 }
 .main-image {
-  background-image:url(../resources/desk.jpg);
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2), 
+      rgba(0, 0, 0, 0.2)
+    ),
+    url(../resources/oc-ferris-wheel.jpg);
+/*  background:rgb(96, 96, 96);*/
+/*  background-image:url(../resources/oc-ferris-wheel.jpg);*/
   position:relative;
   display: block;
   width:100%;
@@ -110,6 +113,7 @@ header{
   background-size: cover;
   z-index: 1;
   background-repeat:no-repeat;
+  opacity:0.95;
 
 }
 #about-me-div{
@@ -122,35 +126,25 @@ header{
   text-align:center;
   padding-bottom: 0.8em;
   padding-top:0.9em;
-/*  background-color: #333;
-  color:#fff;*/
 }
 .about-me{
   height:30%;
   text-align: left;
   font-size:1.23em;
-/*  padding-left: 25%;
-  padding-right:25%;*/
   padding-top:1em;
   background-color: #fff;
   color:#333;
 
 }
-
-
 .about-me h2{
   margin:0em;
   font-size:1.925em;
   text-align:center;
   padding-bottom: 0.625em;
   padding-top:0.625em;
-/*  background-color: #333;
-  color:#fff;*/
 }
 
 .experience{
-/*  padding-left: 25%;
-  padding-right:25%;*/
   padding-top:1.25em;
   height:30%;
   text-align: left;
@@ -165,11 +159,9 @@ header{
 
 }
 .personal-projects{
-/*  padding-left: 25%;
-  padding-right:25%;*/
   padding-top:1.25em;
   text-align:left;
-    font-size:1.23em;
+  font-size:1.23em;
 }
 @media only screen and (max-width:768px){
   /* styles for mobile browsers smaller than 768; (iPad) */
