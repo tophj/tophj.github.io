@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="My Guthub hosted webpage.">
+		<meta name="author" content="Chris Jones">
+		<link rel="icon" href="terminal.ico">
+		<title>tophj</title>
+		<!-- Bootstrap core CSS -->
+		<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="new-home.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+			<h3 class="masthead">tophj</h3>
+			<nav>
+				<ul class="masthead-list">
+	                <li class="default"><a href="http://tophj.github.io">home</a></li>
+	                <li><a href="https://github.com/tophj">projects</a></li>
+	             	<li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
+	            </ul>
+            <nav>
+		</header>
+
+		<div class="graph-body">
+            <div class="chart"></div>
+            <div class="graph-description">
+            	<h3>the ping project</h3>             
+            	<p class="lead">This graph displays the latency between my server and Google, taken over the course of a day. </p>
+            </div>
+        </div>
+
+		<!-- D3 for graphs -->
+	    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+	    <!-- Core files for rendering the graph
+	    ================================================== -->
+	    <script src="pingJSON.js"></script>
+	    <script src="graph.js"></script>
+
+	    <!-- Placed at the end of the document so the pages load faster --> 
+	    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+	</body>
+</html>
