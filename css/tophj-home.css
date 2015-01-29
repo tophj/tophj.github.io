@@ -56,13 +56,13 @@ header{
   float: left;
   font-family:'Lato', sans-serif;
   font-weight: bold;
-  color:#fff;
+  color:#000;
   vertical-align: center;
 }
 .masthead-list{
   float:right;
   margin-top: 1.400rem;
-  color: #fff;
+  color: #111;
   padding:0;
 }
 
@@ -76,7 +76,7 @@ header{
   font-size:1.5em;
   font-weight: bold;
   border-bottom: 0.125em solid transparent;
-  color: #eee;
+  color: #111;
 }
 .masthead-list > li > a:hover,
 .masthead-list > li > a:focus {
@@ -87,11 +87,11 @@ header{
 .masthead-list > .default > a,
 .masthead-list > .default > a:hover,
 .masthead-list > .default > a:focus {
-  color:#fff;
-  border-bottom-color: #eee;
+  color:#000;
+  border-bottom-color: #000;
 }
 #main-image-div{
-  height:100%;
+  height:75%;
 }
 .container-fluid{
   width:100%;
@@ -103,7 +103,7 @@ header{
       rgba(0, 0, 0, 0.2), 
       rgba(0, 0, 0, 0.2)
     ),
-    url(../resources/oc-ferris-wheel.jpg);
+    url(../resources/Manhattan-Bridge.jpg);
 /*  background:rgb(96, 96, 96);*/
 /*  background-image:url(../resources/oc-ferris-wheel.jpg);*/
   position:relative;
@@ -128,6 +128,8 @@ header{
 #about-me-div{
   padding-left:25%;
   padding-right:25%;
+  padding-top:5%;
+  padding-bottom:5%;
 }
 .about-me-title h2{
   margin:0em;
@@ -135,26 +137,35 @@ header{
   text-align:center;
   padding-bottom: 0.8em;
   padding-top:0.9em;
+  background-color: #fff;
 }
 .about-me{
   height:30%;
   text-align: left;
   font-size:1.23em;
   padding-top:1em;
-  background-color: #fff;
   color:#333;
+
 }
-.about-me h2{
+#about-me-title h2{
   margin:0em;
   font-size:1.925em;
   text-align:center;
   padding-bottom: 0.625em;
   padding-top:0.625em;
+    border-bottom: 1px solid lightgray;
+}
+#experience-row{
+  padding-left:10%;
+  padding-right:10%;
+    padding-top:5%;
+  padding-bottom:5%;
 }
 .experience{
-  padding-top:1.25em;
+  padding-bottom: 0.8em;
+  padding-top:0.9em;
   height:30%;
-  text-align: left;
+  text-align: center;
  font-size:1.23em;
 }
 .experience-title h2{
@@ -163,11 +174,39 @@ header{
   text-align:center;
   padding-bottom: 0.8em;
   padding-top:0.9em;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.personal-projects-title h2{
+  margin:0em;
+  font-size:1.925em;
+  text-align:center;
+  padding-bottom: 0.8em;
+  padding-top:0.9em;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+#personal-projects-row{
+    padding-top:5%;
+  padding-bottom:5%;
 }
 .personal-projects{
   padding-top:1.25em;
   text-align:left;
   font-size:1.23em;
+  margin-top:100%;
+}
+.thumbnail {
+    position: absolute;
+    top: 15px;
+    bottom: 0;
+    left: 15px;
+    right: 0;
+    text-align:center;
+    padding-top:20%;
+    max-width: 400px;
+    max-height:400px;
+
 }
 @media only screen and (max-width:768px){
   /* styles for mobile browsers smaller than 768; (iPad) */
