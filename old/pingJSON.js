@@ -1,7 +1,7 @@
 // because github pages and CORS don't play nicely
 // TODO: find a better way to do this
 
-var jsonPings = { "pings" :
+var januaryPings = { "pings" :
 [ 
 { "_id" : { "$oid" : "5493591b28eb5103cffa4553" }, "date" : "2014-12-18", "ping" : "1157", "time" : "17:45" }, 
 { "_id" : { "$oid" : "5493593b28eb5103cffa4554" }, "date" : "2014-12-18", "ping" : "1341", "time" : "17:46" }, 
