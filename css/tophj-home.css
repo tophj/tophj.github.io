@@ -10,7 +10,7 @@
  */
 html, body{
 	height: 100%;
-	background-color: #fff;
+	background-color: #f9f9f9;
 	text-align: center;
 	color: #333;
   font-family: 'Lato', sans-serif;
@@ -43,6 +43,17 @@ header{
   -moz-box-sizing:border-box;
   box-sizing:border-box
 }
+h2{
+  margin:0em;
+  font-size:1.925em;
+  text-align:center;
+/*  padding-bottom: 0.625em;*/
+  padding-top:0.625em;
+/*  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;*/
+  color:#333;
+  background-color:#fff;
+}
 .navbar{
   height:100%;
   width:100%;
@@ -56,7 +67,7 @@ header{
   float: left;
   font-family:'Lato', sans-serif;
   font-weight: bold;
-  color:#000;
+  color:#fff;
   vertical-align: center;
 }
 .masthead-list{
@@ -91,7 +102,7 @@ header{
   border-bottom-color: #000;
 }
 #main-image-div{
-  height:75%;
+  height:100%;
 }
 .container-fluid{
   width:100%;
@@ -103,7 +114,7 @@ header{
       rgba(0, 0, 0, 0.2), 
       rgba(0, 0, 0, 0.2)
     ),
-    url(../resources/Manhattan-Bridge.jpg);
+    url(../resources/desk.jpg);
 /*  background:rgb(96, 96, 96);*/
 /*  background-image:url(../resources/oc-ferris-wheel.jpg);*/
   position:relative;
@@ -125,89 +136,26 @@ header{
   font-size:2.0em;
 
 }
-#about-me-div{
-  padding-left:25%;
-  padding-right:25%;
-  padding-top:5%;
-  padding-bottom:5%;
+footer{
+position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  opacity: 0.8;
+  z-index:10;
 }
-.about-me-title h2{
-  margin:0em;
-  font-size:1.925em;
-  text-align:center;
-  padding-bottom: 0.8em;
-  padding-top:0.9em;
-  background-color: #fff;
-}
-.about-me{
-  height:30%;
-  text-align: left;
-  font-size:1.23em;
-  padding-top:1em;
-  color:#333;
+.col-md-4 h2{
+  background-color: transparent;
+  color:#000;
 
 }
-#about-me-title h2{
-  margin:0em;
-  font-size:1.925em;
-  text-align:center;
-  padding-bottom: 0.625em;
-  padding-top:0.625em;
-    border-bottom: 1px solid lightgray;
+.col-md-4{
+  padding:0px;
 }
-#experience-row{
-  padding-left:10%;
-  padding-right:10%;
-    padding-top:5%;
-  padding-bottom:5%;
-}
-.experience{
-  padding-bottom: 0.8em;
-  padding-top:0.9em;
-  height:30%;
-  text-align: center;
- font-size:1.23em;
-}
-.experience-title h2{
-  margin:0em;
-  font-size:1.925em;
-  text-align:center;
-  padding-bottom: 0.8em;
-  padding-top:0.9em;
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-}
-.personal-projects-title h2{
-  margin:0em;
-  font-size:1.925em;
-  text-align:center;
-  padding-bottom: 0.8em;
-  padding-top:0.9em;
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-}
-#personal-projects-row{
-    padding-top:5%;
-  padding-bottom:5%;
-}
-.personal-projects{
-  padding-top:1.25em;
-  text-align:left;
-  font-size:1.23em;
-  margin-top:100%;
-}
-.thumbnail {
-    position: absolute;
-    top: 15px;
-    bottom: 0;
-    left: 15px;
-    right: 0;
-    text-align:center;
-    padding-top:20%;
-    max-width: 400px;
-    max-height:400px;
 
-}
+
+
 @media only screen and (max-width:768px){
   /* styles for mobile browsers smaller than 768; (iPad) */
   body{
