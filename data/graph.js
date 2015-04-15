@@ -108,7 +108,7 @@ svg.append("text")
 	.attr("y", height+8)
 	.attr("x", width-8)
 	.attr("dy", ".75em")
-	.attr("fill", "gray")
+	.attr("fill", "white")
 		.text("time (H:M)");
 
 // Y axis latency label
@@ -119,7 +119,7 @@ svg.append("text")
 	.attr("x", -4)
 	.attr("dy", ".75em")
 	.attr("transform", "rotate(-90)")
-	.attr("fill", "gray")
+	.attr("fill", "white")
 		.text("latency (ms)");
 
 // Append the X axis to the SVG

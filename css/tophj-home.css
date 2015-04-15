@@ -73,7 +73,7 @@ h2{
 .masthead-list{
   float:right;
   margin-top: 1.400rem;
-  color: #111;
+  color: #444;
   padding:0;
 }
 
@@ -87,22 +87,30 @@ h2{
   font-size:1.5em;
   font-weight: bold;
   border-bottom: 0.125em solid transparent;
-  color: #111;
+  color: #444;
 }
 .masthead-list > li > a:hover,
 .masthead-list > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #000;
+  border-bottom-color: #444;
   text-decoration: none;
 }
 .masthead-list > .default > a,
 .masthead-list > .default > a:hover,
 .masthead-list > .default > a:focus {
-  color:#000;
-  border-bottom-color: #000;
+  color:#111;
+  border-bottom-color: #111;
 }
 #main-image-div{
-  height:75%;
+  height:95%;
+}
+.footer{
+  height:5%;
+  width:100%;
+}
+#footer-list > li{
+    display: inline-block;
+  margin-right: 1.25em;
 }
 .container-fluid{
   width:100%;
@@ -114,9 +122,8 @@ h2{
       rgba(0, 0, 0, 0.2), 
       rgba(0, 0, 0, 0.2)
     ),
-    url(../resources/hi-sands.jpg);
-/*  background:rgb(96, 96, 96);*/
-/*  background-image:url(../resources/oc-ferris-wheel.jpg);*/
+    url(../resources/desk.jpg);
+
   position:relative;
   display: block;
   width:100%;
@@ -138,14 +145,7 @@ h2{
 }
 #about-me-title h2{
   border-top:0px;
-/*    margin:0em;
-  font-size:1.925em;
-  text-align:center;
-  padding-bottom: 0.625em;
-  padding-top:0.625em;
-  border-bottom: 1px solid lightgray;
-  color:#fff;
- background-color:#333;*/
+
 }
 #about-me-div{
   padding-left:25%;
@@ -153,7 +153,6 @@ h2{
   padding-top:5%;
   padding-bottom:5%;
 }
-
 
 .about-me{
   height:30%;
@@ -165,10 +164,8 @@ h2{
 
 }
 #experience-row{
-  padding-left:10%;
-  padding-right:10%;
-    padding-top:5%;
-  padding-bottom:5%;
+
+  padding:10% 5%;
 }
 .experience{
   padding-bottom: 0.8em;
@@ -177,59 +174,86 @@ h2{
   text-align: center;
  font-size:1.23em;
  width:75%;
+
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition:    all 0.3s ease;
+  -o-transition:      all 0.3s ease;
+  -ms-transition:     all 0.3s ease;
+  transition:         all 0.3s ease; 
+
 }
+
 
 #personal-projects-row{
   padding:5%;
+  height:auto;
+  width:100%;
   
 }
 .personal-projects{
   padding-top:1.25em;
   text-align:left;
   font-size:1.23em;
-  margin-top:100%;
+}
+.personal-projects a{
+  width:100%;
 }
 .thumbnail {
-    position: absolute;
-    top: 15px;
-    bottom: 0;
-    left: 15px;
-    right: 0;
-    text-align:center;
-    padding-top:15%;
-    max-width: 350px;
-    max-height:350px;
-    color:#fff;
-    background-color: #333
+  position: absolute;
+  top: 15px;
+  bottom: 0;
+  left: 15px;
+  right: 0;
+  text-align:center;
+  padding-top:15%;
+  max-width: 450px;
+  max-height:450px;
+  color:#fff;
+  background-color: #333
 }
 .thumbnail a{
-      font-size:1.23em;
-
+  font-size:1.23em;
 }
 
 #experience-row{
   padding:0;
   height:45%;
   color:#fff;
+  overflow:hidden;
 }
-.experience p{
+.experience-text{
   padding-left:10%;
   padding-right:10%;
   text-align: center;
+  position:absolute;
+
 }
 #battelle-experience{
 
-    height:100%;
-    width:100%;
-    background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.6), 
-      rgba(0, 0, 0, 0.6)
-    ),
-    url(../resources/dc.jpg);
-    background-size: cover;
-    background-repeat:no-repeat;
+  height:100%;
+  width:100%;
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0.6)
+  ),
+  url(../resources/dc.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
 }
+
+#battelle-experience:hover,
+#uva-experience:hover{
+  opacity: 0.3;
+  width:   120%;
+  height:  120%; 
+}
+#battelle-col,
+#uva-col{
+    overflow:hidden;
+}
+
 #uva-experience{
 
     height:100%;
