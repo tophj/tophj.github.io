@@ -31,8 +31,32 @@
         <div class="graph-title">Ping data for January 8th, 2015</div>
         <div class="chart"></div>
         <div class="graph-description">           
-            <p class="lead">This graph displays the latency between my server and Google. This data was taken from 00:00 to 23:59 on January 8th, with a ping packet being sent every 2 seconds. A colored dot represents a successful ping, while a white dot indicates a request timed out.</p>
-        </div>    
+            <p class="lead">This graph displays the latency between my home server and Google. This data was taken from 00:00 to 23:59 on January 8th 2015, with a ping packet being sent every 2 seconds. This graph contains approximately 40,000 ping requests.</p>
+        </div>   
+        </div>
+
+       <div class="ping-table">
+        <table class="table table-bordered">
+          <tr>
+            <td>Red Dot </td>
+            <td>ping > 700ms (Very slow ping)</td>
+          </tr>
+          <tr>
+            <td>Yellow Dot </td>
+            <td>ping > 200ms (Slow ping)</td>
+          </tr>
+          <tr>
+            <td>Green Dot </td>
+            <td>ping < 200ms (Good ping)</td>
+          </tr>
+          <tr>
+            <td>White Dot </td>
+            <td>ping timeout (No response from server aka packet loss)</td>
+          </tr>
+        </table>
+      </div>
+
+
         <div class="graph-table">
           <table class="table table-bordered">
             <tr>

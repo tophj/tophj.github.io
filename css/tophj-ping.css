@@ -92,7 +92,7 @@ header{
   margin-left: 5%;
 }
 .graph-body{
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   position:relative;
   display:block;
 }
@@ -106,7 +106,7 @@ header{
 	font-size: 22px;
 }
 .graph-description{
-	margin-top: 20px;
+	margin-top: 40px;
   text-align: center;
   margin-left:15%;
   margin-right:15%;
@@ -117,7 +117,7 @@ header{
 }
 
 /*
- * Graph Statistics Table
+ * Graph Statistics Table 
  */
 .graph-table{
   margin-top: 60px;
@@ -140,6 +140,32 @@ div.tooltip {
   color:#fff;
   pointer-events: none;         
 }
+
+/*
+ * Graph Statistics Table 
+ */
+.ping-table{
+
+  margin-left:30%;
+  margin-right:30%;
+}
+.ping-table tr td{
+  text-align: center;
+}
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 150px;                  
+  height: 35px;                 
+  padding: 2px;             
+  font: 14px sans-serif;        
+  background: #333;   
+  border: 0px;      
+  color:#fff;
+  pointer-events: none;         
+}
+
 /*
 * tooltips
 */
