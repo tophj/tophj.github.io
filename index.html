@@ -10,134 +10,64 @@
     <title>tophj</title>
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles and font -->
-   <!--  <link href="css/tophj-home.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> -->
-    </head>
-    <body>
-      <div class="container-fluid">
-        <div class="row">
-          <header>
-            <nav class="navbar">
-           <!--    <h1 class="masthead">Chris Jones</h1> -->
-              <!-- <ul class="masthead-list">
-                <li class="default"><a>home</a></li>
-                <li><a>experience</a></li>
-                <li><a href="https://github.com/tophj/tophj.github.io">github</a></li>
-                <li><a href="https://www.linkedin.com/in/tophj">linkedin</a></li>
-              </ul> -->
-            </nav>
-          </header>
+    <!-- Custom styles for this template -->
+    <link href="css/tophj-ping.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+      <header>
+        <h3 class="masthead">tophj</h3>
+        <nav>
+          <ul class="masthead-list">
+            <li class="default"><a href="http://tophj.github.io">home</a></li>
+            <li><a href="https://github.com/tophj/tophj.github.io">code</a></li>
+            <li><a href="https://www.linkedin.com/in/tophj">LinkedIn</a></li>
+          </ul>
+        </nav> 
+      </header>
+      </div>
+      <div class="graph-body">
+        <div class="graph-title">Ping data for January 8th, 2015</div>
+        <div class="chart"></div>
+        <div class="graph-description">           
+            <p class="lead">This graph displays the latency between my server and Google. This data was taken from 00:00 to 23:59 on January 8th, with a ping packet being sent every 2 seconds. A colored dot represents a successful ping, while a white dot indicates a request timed out.</p>
+        </div>    
+        <div class="graph-table">
+          <table class="table table-bordered">
+            <tr>
+              <td>Min ping</td>
+              <td class="min-ping"></td>
+            </tr>
+            <tr>
+              <td>Max ping</td>
+              <td class="max-ping"></td>
+            </tr>
+            <tr>
+              <td>Average ping</td>
+              <td class="average-ping"></td>
+            </tr>
+            <tr>
+              <td>% of pings timed out</td>
+              <td class="timed-out"></td>
+            </tr>
+          </table>
         </div>
-        <div class="row" id="main-image-div">
-          <div class="main-image" style="text-align:center">
-      <!--       <div class="main-image-text">
-              HELLO THERE MAN
-            </div> -->
-                 NOTHING TO SEE HERE
-          </div>
-
-        </div>
-        <!-- <div class="row" id="about-me-title">
-           <h2> About Me</h2>
-        </div>
-        <div class="row" id="about-me-div">
-          <div class="about-me-title">
-           
-          </div>
-          <div class="about-me">
-            <P>Hi. My name is Chris Jones and I’m a junior software engineer located in Cambridge MD.</P>
-            <P>I enjoy both front and backend development, and have experience doing so! My previous stack was comprised of Linux, Apache, Neo4j a NoSQL graph database, and Python.</P>
-            <P>In the past I’ve developed applications for the University of Virginia Department of Chemistry, which were used by over 1600 students a semester; web crawlers for data retrieval and analysis for Battelle Memorial Institute; and a built from scratch BitTorrent client in C for my capstone project at Virginia Tech.</P>
-            <P>Some of my personal projects include a python-based recreation of the enigma machine, a Google chrome extension for automatically censoring TV spoilers, and a mock up of the Google homepage I contributed to The Odin Project, an open source curriculum for learning web development.</P>
-            <p>If you would like to contact me, feel free to connect with me on
-            <a href="https://www.linkedin.com/in/tophj">linkedin,</a>
-             or send me an
-            <a href="mailto:tophjonline@gmail.com">email.</a>
-            </p>
-          </div>    
-        </div>
-        <div class="row" id="experience-title">
-          <h2>Work Experience</h2>
-        </div>
-
-        <div class="row" id="experience-row">
-          <div class="col-md-6" id="battelle-col">
-            <div class="experience" id="battelle-experience">
-              <div class="experience-text">
-                <h3 class="company">Battelle Memorial Institute</h3>
-                <p class="date">June-August 2013, October 2014</p>
-                <p class="title">Software Engineer Intern</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet molestie ante, eget congue lectus. Etiam ac eros efficitur, faucibus neque eu, elementum eros. Nunc mollis purus auctor odio finibus sodales. </p>
-            </div>
-            </div>
-          </div>
-
-          <div class="col-md-6" id="uva-col">
-            <div class="experience" id="uva-experience">
-              <h3 class="company">University of Virginia</h3>
-              <p class="date">February-May 2012</p>
-              <p class="title">Software Developer Volunteer</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet molestie ante, eget congue lectus. Etiam ac eros efficitur, faucibus neque eu, elementum eros. Nunc mollis purus auctor odio finibus sodales. </p>
-            </div>
-
-          </div>
-        </div>
-
-           <div class="row" id="personal-projects-title">
-              <h2>Personal Projects</h2>
-          </div>
-          <div class="row" id="personal-projects-row">
-            
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <div class="personal-projects" id="ping-project">
-                <a href="#x" class="thumbnail purple">
-                <h3 class="project-name">Ping Project [HTML5/CSS3/D3.js]</h3>
-                <p>Vestibulum tincidunt est in consequat efficitur. Suspendisse non vestibulum sapien, et dictum est. Suspendisse ut augue aliquam, sodales lectus in, lacinia ligula. Ut volutpat dui mi, ac congue nulla dignissim a.  </p>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <div class="personal-projects" id="tvmuse">
-              <a href="#x" class="thumbnail purple">
-                <h3 class="project-name">TVMuse Comment Blocker [HTML/JS]</h3>
-                <p>Vestibulum tincidunt est in consequat efficitur. Suspendisse non vestibulum sapien, et dictum est. Suspendisse ut augue aliquam, sodales lectus in, lacinia ligula. Ut volutpat dui mi, ac congue nulla dignissim a.  </p>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                          <span class="glyphicon-beach-umbrella"></span>
-              <div class="personal-projects" id="torrential-downloads">
-              <a href="#x" class="thumbnail purple">
-
-                <h3 class="project-name">Torrential Downloads [C/C++]</h3>
-                <p>(Debian only) A built from scratch CLI BitTorrent application  </p>
-                </a>
-              </div>
-            </div> -->
-         <!--  </div> -->
-          <!--
-          <h2>LANGUAGES and TECHNOLOGIES</h2>
-          <h2>EDUCATION</h2> -->
-<!--         </div>
-      </div> -->
-    <div class="row" id="footer-row">
-      <footer class="footer">
-        <ul class="footer-list">
-              <!--   <li><h3>About Me</h3></li> -->
-<!--                 <li><h3>Experience</h3></li>
-                <li><h3>Projects</h3></li>    -->            
-       </ul>
-
-
-      </footer>
+      </div>
     </div>
-    </div>
-    
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+      <!-- D3 for graphs -->
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+      <!-- Core files for rendering the graph
+      ================================================== -->
+      <script src="data/January8.js"></script>
+      <script src="data/graph.js"></script>
+
+      <!-- Placed at the end of the document so the pages load faster --> 
+      <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
