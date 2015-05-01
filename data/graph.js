@@ -319,3 +319,10 @@ svg.selectAll("gradient-green-stop")
 }
 //d3.select(window).on('resize', resize);  uncomment for resizing of graph 
 
+
+
+$body = $("body");
+$body.removeClass("loading");
+
+
+
