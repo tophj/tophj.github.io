@@ -321,8 +321,6 @@ svg.selectAll("gradient-green-stop")
 
 
 
-$body = $("body");
-$body.removeClass("loading");
 
 
 
