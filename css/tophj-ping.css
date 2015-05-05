@@ -1,27 +1,18 @@
 /*
- * Globals
+ * CSS file for index.html, the ping html
  */
-
-/* Links */
-
 
 /*
  * Base
  */
 html, body{
 	height: 100%;
-	background-color: #000;
+	background-color: #111;
 	text-align: center;
 	color: #fff;
 
 }
-/*.site-wrapper{
-	display:table;
-  width: 100%;
-}
-.site-wrapper-inner{
-  display:table-cell;
-}*/
+
 /*
  * Header
  */
@@ -42,7 +33,6 @@ header{
 	vertical-align: top;
   margin-right:20px;
 }
-
 .masthead-list > li{
 	display: inline-block;
 	margin-left: 20px;
@@ -165,36 +155,6 @@ div.tooltip {
   color:#fff;
   pointer-events: none;         
 }
-
-/*
-* Loading animation
-*/
-
-.loading-animation {
-    display:    none;
-    position:   fixed;
-    z-index:    1000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    background: rgba( 255, 255, 255, .8 ) 
-                url('http://i.stack.imgur.com/FhHRx.gif') 
-                50% 50% 
-                no-repeat;
-}
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
-body.loading {
-    overflow: hidden;   
-}
-
-/* Anytime the body has the loading class, our
-   modal element will be visible */
-body.loading .loading-animation {
-    display: block;
-}
-
 
 @media (min-width: 768px) {
   .masthead {
